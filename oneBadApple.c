@@ -41,6 +41,8 @@ int main() {
         //child process
         else if(pid == 0){
             printf("Child process [#]%d with [id]%d\n", i, getpid());
+            //if the apple is not for them, sleep 2 seconds
+            sleep(2);
             close(fd[1]);
             read(fd[0], message, sizeof(message));
             close(fd[0]);
